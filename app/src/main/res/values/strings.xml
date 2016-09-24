@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AEEG</string>
+
+    <string name="splash.footer.version">Versión 2.0 Septiembre 2016</string>
+    <string name="splash.internet.validation">Debe conectarse a internet</string>
+
+    <string name="login.message.signup">¿Todavía no tiene cuenta?</string>
+    <string name="login.message.signin">Iniciar Sesión</string>
+    <string name="login.message.email">Correo electrónico</string>
+    <string name="login.message.password">Contraseña</string>
+    <string name="login.title">Inicio de sesión</string>
+</resources>
