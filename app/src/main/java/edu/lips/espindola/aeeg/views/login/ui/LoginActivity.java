@@ -79,6 +79,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
                 new ConnectionTask.AsyncResponse() {
                     @Override
                     public void processFinish(String output) {
+                        // output es la cadena JSON
                         Snackbar.make(inputsWrapper, output, Snackbar.LENGTH_INDEFINITE).show();
                     }
                 });
