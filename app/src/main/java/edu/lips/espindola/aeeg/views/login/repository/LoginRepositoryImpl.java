@@ -79,6 +79,7 @@ public class LoginRepositoryImpl implements LoginRepository {
         webService = new ConnectionTask(new ConnectionTask.AsyncResponse() {
             @Override
             public void processFinish(String output) {
+                Log.e("LoginRepositoryImpl","signIn-Response");
                 postEvent(17,output);
             }
         });

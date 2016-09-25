@@ -69,25 +69,13 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     @Override
     @OnClick(R.id.btnSignin)
     public void handleSignIn() {
-        //presenter.validateLogin(inputEmail.getText().toString(),
-        //        inputPassword.getText().toString());
-        LoginRepository repository = new LoginRepositoryImpl();
-        /*repository.signIn(inputEmail.getText().toString(),
-                inputPassword.getText().toString());*/
-        repository.signIn(inputEmail.getText().toString(),
-                inputPassword.getText().toString(),
-                new ConnectionTask.AsyncResponse() {
-                    @Override
-                    public void processFinish(String output) {
-                        // output es la cadena JSON
-                        Snackbar.make(inputsWrapper, output, Snackbar.LENGTH_INDEFINITE).show();
-                    }
-                });
+        presenter.validateLogin(inputEmail.getText().toString(),
+                inputPassword.getText().toString());
     }
 
     @Override
     public void handleSignUp() {
-
+       // presenter.registerNewUser();
     }
 
     @Override
