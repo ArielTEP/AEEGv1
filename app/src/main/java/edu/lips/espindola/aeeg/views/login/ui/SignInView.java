@@ -3,7 +3,7 @@ package edu.lips.espindola.aeeg.views.login.ui;
 /**
  * Created by Ariel on 9/20/16.
  */
-public interface LoginView {
+public interface SignInView {
     void enableInputs();
     void disableInputs();
     void showProgressBar();

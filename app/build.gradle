@@ -30,4 +30,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.android.support:design:23.1.1'
     compile 'org.greenrobot:eventbus:3.0.0'
+
+    compile 'com.github.glomadrian:MaterialAnimatedSwitch:1.1@aar'
 }

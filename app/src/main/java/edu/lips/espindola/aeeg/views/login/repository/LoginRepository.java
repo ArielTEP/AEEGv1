@@ -9,7 +9,6 @@ public interface LoginRepository {
     void signUp(String name,String lastName,
                 String email, String password,
                 String userType, int college);
-    void signIn(String email, String password, ConnectionTask.AsyncResponse asyncResponse);
     void signIn(String email, String password);
     void checkSession();
 }

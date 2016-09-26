@@ -1,5 +1,6 @@
 package edu.lips.espindola.aeeg.views.login.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,13 +14,11 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.lips.espindola.aeeg.R;
-import edu.lips.espindola.aeeg.domain.ConnectionTask;
+import edu.lips.espindola.aeeg.views.home.HomeActivity;
 import edu.lips.espindola.aeeg.views.login.presenter.LoginPresenter;
 import edu.lips.espindola.aeeg.views.login.presenter.LoginPresenterImpl;
-import edu.lips.espindola.aeeg.views.login.repository.LoginRepository;
-import edu.lips.espindola.aeeg.views.login.repository.LoginRepositoryImpl;
 
-public class LoginActivity extends AppCompatActivity implements LoginView {
+public class SignInActivity extends AppCompatActivity implements SignInView {
 
 
     @Bind(R.id.editTxtEmail)
@@ -38,8 +37,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        this.setTitle(R.string.login_title);
+        setContentView(R.layout.activity_sign_in);
+        this.setTitle(R.string.login_signin_title);
         ButterKnife.bind(this);
         presenter = new LoginPresenterImpl(this);
         presenter.onCreate();
@@ -80,17 +79,19 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @Override
     public void navigateToMainScreen() {
-
+        startActivity(new Intent(this, HomeActivity.class));
     }
 
     @Override
     public void navigateToSignupScreen() {
-
+        startActivity(new Intent(this, SignUpActivity.class));
     }
 
     @Override
     public void loginError(String error) {
-
+        inputPassword.setText("");
+        //String msgError = String.format(getString(R.string.login_error_message_signin),error);
+        inputPassword.setError(error);
     }
 
     @Override
@@ -105,7 +106,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @Override
     public void showSnackBarMessage(String response) {
-        Snackbar.make(inputsWrapper, response, Snackbar.LENGTH_INDEFINITE).show();
+        Snackbar.make(inputsWrapper, response, Snackbar.LENGTH_SHORT).show();
     }
 
     void setInputs(boolean enabled){ // controles de entrada

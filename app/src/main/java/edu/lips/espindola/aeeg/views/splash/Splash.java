@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import edu.lips.espindola.aeeg.R;
-import edu.lips.espindola.aeeg.views.login.ui.LoginActivity;
+import edu.lips.espindola.aeeg.views.login.ui.SignInActivity;
 
 
 public class Splash extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class Splash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(Splash.this, LoginActivity.class);
+                Intent i = new Intent(Splash.this, SignInActivity.class);
                 startActivity(i);
                 finish();
             }
